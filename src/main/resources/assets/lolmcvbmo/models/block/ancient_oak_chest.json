@@ -1,0 +1,7 @@
+{
+    "parent": "lolmcv:block/chests/chest_base",
+    "textures": {
+        "wood_type": "lolmcvbmo:entity/chest/ancient_oak",
+        "particle": "biomemakeover:block/ancient_oak_planks"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "lolmcv:block/chests/chest_base",
+    "textures": {
+        "wood_type": "lolmcvbmo:entity/chest/blighted_balsa",
+        "particle": "biomemakeover:block/blighted_balsa_planks"
+    }
+}

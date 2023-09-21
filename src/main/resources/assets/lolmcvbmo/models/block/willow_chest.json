@@ -1,0 +1,7 @@
+{
+    "parent": "lolmcv:block/chests/chest_base",
+    "textures": {
+        "wood_type": "lolmcvbmo:entity/chest/willow",
+        "particle": "biomemakeover:block/willow_planks"
+    }
+}
