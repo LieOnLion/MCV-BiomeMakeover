@@ -31,7 +31,7 @@ public class MoreChestBMOInit {
             ITEMS.register(type.getId(), () -> new BlockItem(chest_block.get(), new Item.Properties()));
         }
 
-        chest_entity = TILE_ENTITIES.register(MoreChestVariantsBMO.MODID + ":chest_tile", () -> BlockEntityType.Builder.of(MoreChestBMOBlockEntity::new, Arrays.stream(chests).map(RegistryObject::get).toArray(Block[]::new)).build(null));
+        chest_entity = TILE_ENTITIES.register("chest_tile", () -> BlockEntityType.Builder.of(MoreChestBMOBlockEntity::new, Arrays.stream(chests).map(RegistryObject::get).toArray(Block[]::new)).build(null));
 
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
