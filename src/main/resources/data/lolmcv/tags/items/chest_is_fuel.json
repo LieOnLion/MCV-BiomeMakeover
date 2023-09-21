@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#lolmcvbmo:chest_is_fuel",
+      "required": false
+    }
+  ]
+}
