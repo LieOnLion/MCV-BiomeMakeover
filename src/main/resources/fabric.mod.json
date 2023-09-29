@@ -27,6 +27,6 @@
 		"minecraft": "~1.20",
 		"java": ">=17",
 		"fabric-api": "*",
-		"lolmcv": "1.4.1"
+		"lolmcv": ">=${lolmcv_version_range}"
 	}
 }
