@@ -1,6 +1,5 @@
 package io.github.lieonlion.mcvbmo.client;
 
-import io.github.lieonlion.mcv.MoreChestVariants;
 import io.github.lieonlion.mcv.client.MoreChestRenderer;
 import io.github.lieonlion.mcvbmo.MoreChestVariantsBMO;
 import io.github.lieonlion.mcvbmo.blocks.MoreChestBMOEnum;
@@ -49,19 +48,15 @@ public class MoreChestBMORenderer extends ChestRenderer<MoreChestBMOBlockEntity>
         return getChestMaterial(blockEntity, chestType);
     }
 
-    private static Material getChestMaterial(String path) {
+    public static Material getChestMaterial(String path) {
         return new Material(Sheets.CHEST_SHEET, new ResourceLocation(MoreChestVariantsBMO.MODID, "entity/chest/" + path));
-    }
-
-    private static Material getMCVMaterial(String path) {
-        return new Material(Sheets.CHEST_SHEET, new ResourceLocation(MoreChestVariants.MODID, "entity/chest/" + path));
     }
 
     private Material getChestMaterial(MoreChestBMOBlockEntity tile, ChestType type) {
         if (christmas) {
             return Sheets.chooseMaterial(tile, type, christmas);
         } else if (starwarsday) {
-            return MoreChestRenderer.chooseMaterial(type, getMCVMaterial("starwars_left"), getMCVMaterial("starwars_right"), getMCVMaterial("starwars"));
+            return MoreChestRenderer.chooseMaterial(type, MoreChestRenderer.getChestMaterial("starwars_left"), MoreChestRenderer.getChestMaterial("starwars_right"), MoreChestRenderer.getChestMaterial("starwars"));
         } else {
             return MoreChestRenderer.chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
         }

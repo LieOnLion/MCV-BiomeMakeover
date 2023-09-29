@@ -4,7 +4,7 @@ license="${mod_license}"
 
 [[mods]]
 modId="${mod_id}"
-version="${mod_version} - ${minecraft_version}"
+version="${mod_version}"
 displayName="More Chest Variants - Biome Makeover"
 authors="${mod_authors}"
 description='''This adds the Biome Makeover mod's Wood types to More Chest Variats
