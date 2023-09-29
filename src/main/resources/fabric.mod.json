@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "${mod_id}",
-	"version": "${mod_version} - 1.20.1",
+	"version": "${mod_version}",
 	"name": "More Chest Variants - Biome Makeover",
 	"description": "This adds the Biome Makeover mod's Wood types to More Chest Variats\nExpanding the colour",
 	"authors": [
@@ -26,9 +26,7 @@
 		"fabricloader": ">=0.14.22",
 		"minecraft": "~1.20",
 		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
+		"fabric-api": "*",
+		"lolmcv": "1.4.1"
 	}
 }

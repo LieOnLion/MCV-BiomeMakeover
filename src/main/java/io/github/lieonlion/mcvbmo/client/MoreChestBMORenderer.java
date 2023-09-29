@@ -1,5 +1,6 @@
 package io.github.lieonlion.mcvbmo.client;
 
+import io.github.lieonlion.mcv.client.MoreChestRenderer;
 import io.github.lieonlion.mcvbmo.MoreChestVariantsBMO;
 import io.github.lieonlion.mcvbmo.block.MoreChestBMOBlock;
 import io.github.lieonlion.mcvbmo.block.MoreChestBMOBlockEntity;
@@ -79,29 +80,17 @@ public class MoreChestBMORenderer extends ChestBlockEntityRenderer<MoreChestBMOB
         this.doubleChestRightLatch = modelPart3.getChild("lock");
     }
 
-    private static SpriteIdentifier getChestMaterial(String path) {
+    public static SpriteIdentifier getChestMaterial(String path) {
         return new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, new Identifier(MoreChestVariantsBMO.MODID, "entity/chest/" + path)) {};
-    }
-
-    private static SpriteIdentifier getMCVMaterial(String path) {
-        return new SpriteIdentifier(TexturedRenderLayers.CHEST_ATLAS_TEXTURE, new Identifier("lolmcv", "entity/chest/" + path)) {};
-    }
-
-    public static SpriteIdentifier chooseMaterial(ChestType type, SpriteIdentifier left, SpriteIdentifier right, SpriteIdentifier single) {
-        return switch (type) {
-            case LEFT -> left;
-            case RIGHT -> right;
-            default -> single;
-        };
     }
 
     private SpriteIdentifier getChestMaterial(MoreChestBMOBlockEntity tile, ChestType type) {
         if (this.christmas) {
             return TexturedRenderLayers.getChestTextureId(tile, type, this.christmas);
         } else if(this.starwarsday) {
-            return chooseMaterial(type, getMCVMaterial("starwars_left"), getMCVMaterial("starwars_right"), getMCVMaterial("starwars"));
+            return MoreChestRenderer.chooseMaterial(type, MoreChestRenderer.getChestMaterial("starwars_left"), MoreChestRenderer.getChestMaterial("starwars_right"), MoreChestRenderer.getChestMaterial("starwars"));
         } else {
-            return chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
+            return MoreChestRenderer.chooseMaterial(type, left[tile.getChestType().ordinal()], right[tile.getChestType().ordinal()], single[tile.getChestType().ordinal()]);
         }
     }
 
